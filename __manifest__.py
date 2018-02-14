@@ -3,11 +3,10 @@
     'name': "receipt_checks_date",
 
     'summary': """
-        Add field in Accounting to register the date of checks receipt.""",
+        Odoo module that create a date field for orders of POS to store the date receipt of checks.""",
 
     'description': """
-        Add field in Accounting to register the date of checks receipt.
-        You can visualise it in POS lines order.
+        Odoo module that create a date field for orders of POS to store the date receipt of checks.
     """,
 
     'author': "Valentin",
