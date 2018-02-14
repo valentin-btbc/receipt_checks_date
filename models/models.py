@@ -16,8 +16,8 @@ class AccountBankStatementLine(models.Model):
         if self.receipt_date < self.date:
             raise ValidationError(_('The date receipt of check must be equal or superior to : ' + self.date))
     
-class PosOreder(models.Model):
+class PosOrder(models.Model):
     _inherit = 'pos.order'
     
-    # Override the statement_ids field to make it readonly to false
+    # Override the statement_ids field to make readonly at false
     statement_ids = fields.One2many('account.bank.statement.line', 'pos_statement_id', string='Payments', readonly=False)
