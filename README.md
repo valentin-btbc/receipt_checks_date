@@ -1,2 +1,2 @@
 # receipt_checks_date
-Odoo module to create a field date in POS orders to store the date receipt of checks.
+Odoo module that create a date field for orders of POS to store the date receipt of checks.
