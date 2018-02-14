@@ -1,0 +1,34 @@
+<odoo>
+  <data>
+    <record id="receipt_checks_date" model="ir.ui.view">
+      <field name="name">pos.order.form.view.inherit</field>
+      <field name="model">pos.order</field>
+      <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"></field>
+      <field name="arch" type="xml">
+        
+        <!--Disable creation and deletion to the treeview of the statement ordres-->
+        <xpath expr="//field[@name='statement_ids']/tree" position="attributes">
+          <attribute name="create">false</attribute>
+          <attribute name="delete">false</attribute>
+        </xpath>
+        
+        <!--Make all fields readonly except receipt_date-->
+        <xpath expr="//field[@name='journal_id']" position="attributes">
+          <attribute name="readonly">1</attribute>
+        </xpath>
+        <xpath expr="//field[@name='statement_id']" position="attributes">
+          <attribute name="readonly">1</attribute>
+        </xpath>
+        <xpath expr="//field[@name='amount']" position="attributes">
+          <attribute name="readonly">1</attribute>
+        </xpath>
+        
+        <!--Add column "Receipt date" in the treeview of payment lines-->
+        <xpath expr="//field[@name='amount']" position="after">
+          <field name="receipt_date" readonly="0" />
+        </xpath>
+        
+      </field>
+    </record>
+  </data>
+</odoo>
