@@ -30,5 +30,18 @@
         
       </field>
     </record>
+    
+    <record id="bank_statement_receipt_checks_date" model="ir.ui.view">
+      <field name="name">account.bank.statement.form.inherit</field>
+      <field name="model">account.bank.statement</field>
+      <field name="inherit_id" ref="account.view_bank_statement_form"></field>
+      <field name="priority">1</field>
+      <field name="arch" type="xml">
+        <!--Add column "Receipt date" in the treeview of payment lines-->
+        <xpath expr="//field[@name='amount']" position="after">
+          <field name="receipt_date" readonly="0" />
+        </xpath>
+      </field>
+    </record>
   </data>
 </odoo>
