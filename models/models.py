@@ -4,6 +4,7 @@ from odoo import models, fields, api, _
 
 from odoo.exceptions import ValidationError
 
+
 class AccountBankStatementLine(models.Model):
     _inherit = 'account.bank.statement.line'
     
@@ -15,7 +16,8 @@ class AccountBankStatementLine(models.Model):
     def check_date(self):
         if self.receipt_date < self.date:
             raise ValidationError(_('The date receipt of check must be equal or superior to : ' + self.date))
-    
+
+
 class PosOrder(models.Model):
     _inherit = 'pos.order'
     
